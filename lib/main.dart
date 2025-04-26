@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'core/color_palette.dart';
 import 'core/app_style.dart';
 import 'screens/welcome_screen.dart';
+import 'core/food_suggestions.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize food suggestions
+  await FoodSuggestionsLoader.loadFoodSuggestions();
+  
   runApp(const DoshaQuizApp());
 }
 

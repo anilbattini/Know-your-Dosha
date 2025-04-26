@@ -46,8 +46,12 @@ class _QuizScreenState extends State<QuizScreen> {
       }
       _currentQuestion++;
       if (_currentQuestion >= _questionsToAsk) {
-        final result = DoshaQuizLogic.calculateResult(_selectedDoshas, questionsAsked: _questionsToAsk);
-        if (result.isAmbiguous && _questionsToAsk < DoshaQuizLogic.totalQuestions) {
+        final result = DoshaQuizLogic.calculateResult(
+          _selectedDoshas,
+          questionsAsked: _questionsToAsk,
+        );
+        if (result.isAmbiguous &&
+            _questionsToAsk < DoshaQuizLogic.totalQuestions) {
           // Ask more questions
           _questionsToAsk += 5;
           if (_questionsToAsk > DoshaQuizLogic.totalQuestions) {
@@ -100,37 +104,54 @@ class _QuizScreenState extends State<QuizScreen> {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 32),
-                      ..._questions[_currentQuestion].getShuffledOptions(_random).map((option) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: ElevatedButton(
-                          style: AppStyle.elevatedButton.copyWith(
-                            backgroundColor: MaterialStateProperty.all(AppColors.card),
-                            foregroundColor: MaterialStateProperty.all(AppColors.textPrimary),
-                            minimumSize: MaterialStateProperty.all(const Size.fromHeight(48)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            )),
-                          ),
-                          onPressed: () => _onOptionSelected(option),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                option.text,
-                                style: AppStyle.body,
+                      ..._questions[_currentQuestion]
+                          .getShuffledOptions(_random)
+                          .map(
+                            (option) => Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 8.0,
                               ),
-                              if (widget.adminMode)
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 12.0),
-                                  child: Text(
-                                    option.dosha.substring(0, 1).toUpperCase(),
-                                    style: AppStyle.subtitle.copyWith(fontWeight: FontWeight.bold),
+                              child: ElevatedButton(
+                                style: AppStyle.elevatedButton.copyWith(
+                                  backgroundColor: WidgetStateProperty.all(
+                                    AppColors.card,
+                                  ),
+                                  foregroundColor: WidgetStateProperty.all(
+                                    AppColors.textPrimary,
+                                  ),
+                                  minimumSize: WidgetStateProperty.all(
+                                    const Size.fromHeight(48),
+                                  ),
+                                  shape: WidgetStateProperty.all(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
                                   ),
                                 ),
-                            ],
+                                onPressed: () => _onOptionSelected(option),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(option.text, style: AppStyle.body),
+                                    if (widget.adminMode)
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 12.0,
+                                        ),
+                                        child: Text(
+                                          option.dosha
+                                              .substring(0, 1)
+                                              .toUpperCase(),
+                                          style: AppStyle.subtitle.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      )),
                     ],
                   ),
                 ),
@@ -140,4 +161,4 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
     );
   }
-} 
+}
