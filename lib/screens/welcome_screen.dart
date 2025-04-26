@@ -1,9 +1,27 @@
 import 'package:flutter/material.dart';
 import '../core/color_palette.dart';
+import '../core/app_style.dart';
 import 'quiz_screen.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  int _titleTapCount = 0;
+  bool _adminMode = false;
+
+  void _onTitleTap() {
+    setState(() {
+      _titleTapCount++;
+      if (_titleTapCount >= 5) {
+        _adminMode = true;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,43 +33,40 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Discover Your Dominant Dosha',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+              GestureDetector(
+                onTap: _onTitleTap,
+                child: Text(
+                  'Discover Your Dominant Dosha',
+                  style: AppStyle.headline,
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
+              if (_adminMode)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    'Admin Mode Enabled',
+                    style: AppStyle.subtitle.copyWith(color: AppColors.pitta, fontWeight: FontWeight.bold),
+                  ),
+                ),
               const SizedBox(height: 24),
               Text(
                 'Take this quiz to find out if Vata, Pitta, or Kapha is most dominant in your body. Answer honestly for best results.',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: AppColors.textSecondary,
-                ),
+                style: AppStyle.body.copyWith(color: AppColors.textSecondary),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 40),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primary,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
+                style: AppStyle.elevatedButton,
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const QuizScreen()),
+                    MaterialPageRoute(builder: (context) => QuizScreen(adminMode: _adminMode)),
                   );
                 },
                 child: const Text(
                   'Start Quiz',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  style: AppStyle.title,
                 ),
               ),
             ],

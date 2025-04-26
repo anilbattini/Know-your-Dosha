@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 import '../core/color_palette.dart';
 import '../core/quiz_logic.dart';
 import 'welcome_screen.dart';
+import '../core/food_suggestions.dart';
+import 'package:flutter/foundation.dart'; // Added for kTransparentImage
+import '../core/app_style.dart'; // Added for AppStyle
+import 'package:flutter/services.dart' show rootBundle;
+import 'dart:typed_data';
+
+// Transparent image data
+final Uint8List kTransparentImage = Uint8List.fromList([
+  0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0x00, 0x00, 0x00, 0x0D, 0x49, 0x48, 0x44, 0x52,
+  0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x08, 0x06, 0x00, 0x00, 0x00, 0x1F, 0x15, 0xC4,
+  0x89, 0x00, 0x00, 0x00, 0x0A, 0x49, 0x44, 0x41, 0x54, 0x78, 0x9C, 0x63, 0x00, 0x01, 0x00, 0x00,
+  0x05, 0x00, 0x01, 0x0D, 0x0A, 0x2D, 0xB4, 0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4E, 0x44, 0xAE,
+]);
 
 class ResultScreen extends StatelessWidget {
   final QuizResult result;
@@ -191,59 +204,135 @@ class _DoshaSuggestions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Replace with structured data and images for each dosha
+    // Group foods by type
+    final groupedFoods = <String, List<FoodSuggestion>>{};
+    for (final food in foodSuggestions) {
+      if (!groupedFoods.containsKey(food.type)) {
+        groupedFoods[food.type] = [];
+      }
+      if (food.doshaRatings[dosha] != null && food.doshaRatings[dosha]! >= 4) {
+        groupedFoods[food.type]!.add(food);
+      }
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ...groupedFoods.entries.map((entry) {
+          if (entry.value.isEmpty) return const SizedBox.shrink();
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12.0),
+                child: Text(
+                  '${entry.key[0].toUpperCase()}${entry.key.substring(1)}',
+                  style: AppStyle.title.copyWith(fontSize: 20),
+                ),
+              ),
+              SizedBox(
+                height: 110,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: entry.value.length,
+                  separatorBuilder: (_, __) => const SizedBox(width: 12),
+                  itemBuilder: (context, i) {
+                    final food = entry.value[i];
+                    return _FoodCard(food: food, dosha: dosha);
+                  },
+                ),
+              ),
+            ],
+          );
+        }),
+        const SizedBox(height: 20),
+        Text('Lifestyle', style: AppStyle.title.copyWith(fontSize: 20)),
+        const SizedBox(height: 8),
+        _LifestyleSuggestion(dosha: dosha),
+      ],
+    );
+  }
+}
+
+class _FoodCard extends StatelessWidget {
+  final FoodSuggestion food;
+  final String dosha;
+  const _FoodCard({required this.food, required this.dosha});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: AppColors.card,
+      clipBehavior: Clip.antiAlias,
+      child: SizedBox(
+        width: 90,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (food.imageAsset != null)
+              FadeInImage(
+                placeholder: MemoryImage(kTransparentImage),
+                image: AssetImage(food.imageAsset!),
+                width: 48,
+                height: 48,
+                fit: BoxFit.cover,
+                imageErrorBuilder: (context, error, stackTrace) {
+                  return Image.asset('assets/foods/fallback.png', width: 48, height: 48, fit: BoxFit.cover);
+                },
+              )
+            else
+              Image.asset('assets/foods/fallback.png', width: 48, height: 48, fit: BoxFit.cover),
+            const SizedBox(height: 4),
+            Text(food.name, textAlign: TextAlign.center, style: AppStyle.subtitle.copyWith(fontSize: 13, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 2),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(5, (i) => Icon(
+                Icons.star,
+                size: 10,
+                color: i < (food.doshaRatings[dosha] ?? 0) ? AppColors.accent : AppColors.card.withOpacity(0.5),
+              )),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _LifestyleSuggestion extends StatelessWidget {
+  final String dosha;
+  const _LifestyleSuggestion({required this.dosha});
+
+  @override
+  Widget build(BuildContext context) {
+    String imagePath = '';
+    String title = '';
+    String description = '';
     switch (dosha) {
       case 'vata':
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _SuggestionTile(
-              image: 'assets/vata_foods.png',
-              title: 'Best Foods',
-              description: 'Warm, moist, oily foods. Favor cooked grains, root vegetables, dairy, nuts, and healthy oils. Avoid dry, cold, and raw foods.',
-            ),
-            _SuggestionTile(
-              image: 'assets/vata_lifestyle.png',
-              title: 'Lifestyle',
-              description: 'Keep a regular routine, stay warm, practice gentle yoga, and get enough rest. Avoid overstimulation and excessive travel.',
-            ),
-          ],
-        );
+        imagePath = 'assets/vata_lifestyle.png';
+        title = 'Vata Lifestyle';
+        description = 'Keep a regular routine, stay warm, practice gentle yoga, and get enough rest. Avoid overstimulation and excessive travel.';
+        break;
       case 'pitta':
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _SuggestionTile(
-              image: 'assets/pitta_foods.png',
-              title: 'Best Foods',
-              description: 'Cool, refreshing foods. Favor sweet fruits, leafy greens, dairy, and grains. Avoid spicy, oily, and fried foods.',
-            ),
-            _SuggestionTile(
-              image: 'assets/pitta_lifestyle.png',
-              title: 'Lifestyle',
-              description: 'Stay cool, avoid excessive heat, practice calming activities, and spend time in nature. Avoid overworking and conflict.',
-            ),
-          ],
-        );
+        imagePath = 'assets/pitta_lifestyle.png';
+        title = 'Pitta Lifestyle';
+        description = 'Stay cool, avoid excessive heat, practice calming activities, and spend time in nature. Avoid overworking and conflict.';
+        break;
       case 'kapha':
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _SuggestionTile(
-              image: 'assets/kapha_foods.png',
-              title: 'Best Foods',
-              description: 'Light, dry, and spicy foods. Favor legumes, bitter greens, and spices. Avoid heavy, oily, and sweet foods.',
-            ),
-            _SuggestionTile(
-              image: 'assets/kapha_lifestyle.png',
-              title: 'Lifestyle',
-              description: 'Stay active, try invigorating exercise, and keep a varied routine. Avoid oversleeping and excessive snacking.',
-            ),
-          ],
-        );
+        imagePath = 'assets/kapha_lifestyle.png';
+        title = 'Kapha Lifestyle';
+        description = 'Stay active, try invigorating exercise, and keep a varied routine. Avoid oversleeping and excessive snacking.';
+        break;
       default:
         return const SizedBox.shrink();
     }
+    return _SuggestionTile(
+      image: imagePath,
+      title: title,
+      description: description,
+    );
   }
 }
 
@@ -256,12 +345,21 @@ class _SuggestionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 8),
       color: AppColors.card,
+      clipBehavior: Clip.antiAlias,
       child: ListTile(
-        leading: Image.asset(image, width: 48, height: 48, fit: BoxFit.cover),
-        title: Text(title, style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textPrimary)),
-        subtitle: Text(description, style: TextStyle(color: AppColors.textSecondary)),
+        leading: FadeInImage(
+          placeholder: MemoryImage(kTransparentImage),
+          image: AssetImage(image),
+          width: 56,
+          height: 56,
+          fit: BoxFit.cover,
+          imageErrorBuilder: (context, error, stackTrace) {
+            return Image.asset('assets/foods/fallback.png', width: 56, height: 56, fit: BoxFit.cover);
+          },
+        ),
+        title: Text(title, style: AppStyle.title.copyWith(fontSize: 18)),
+        subtitle: Text(description, style: AppStyle.subtitle.copyWith(fontSize: 14)),
       ),
     );
   }

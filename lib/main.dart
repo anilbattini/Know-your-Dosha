@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/color_palette.dart';
+import 'core/app_style.dart';
 import 'screens/welcome_screen.dart';
 
 void main() {
@@ -11,17 +12,10 @@ class DoshaQuizApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // For now, use a default age (e.g., 30)
     return MaterialApp(
       title: 'Dosha Quiz',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-        useMaterial3: true,
-        scaffoldBackgroundColor: AppColors.background,
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: AppColors.textPrimary),
-          bodyMedium: TextStyle(color: AppColors.textPrimary),
-        ),
-      ),
+      theme: AppStyle.themeForAge(30),
       home: const WelcomeScreen(),
     );
   }

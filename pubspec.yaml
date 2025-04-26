@@ -58,9 +58,60 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/foods/oats.png
+    - assets/foods/basmati_rice.png
+    - assets/foods/quinoa.png
+    - assets/foods/wheat.png
+    - assets/foods/barley.png
+    - assets/foods/millet.png
+    - assets/foods/brown_rice.png
+    - assets/foods/corn.png
+    - assets/foods/rye.png
+    - assets/foods/rice_noodles.png
+    - assets/foods/banana.png
+    - assets/foods/mango.png
+    - assets/foods/apple.png
+    - assets/foods/grapes.png
+    - assets/foods/avocado.png
+    - assets/foods/coconut.png
+    - assets/foods/pomegranate.png
+    - assets/foods/pear.png
+    - assets/foods/papaya.png
+    - assets/foods/melon.png
+    - assets/foods/ghee.png
+    - assets/foods/olive_oil.png
+    - assets/foods/coconut_oil.png
+    - assets/foods/sesame_oil.png
+    - assets/foods/sunflower_oil.png
+    - assets/foods/flaxseed_oil.png
+    - assets/foods/mustard_oil.png
+    - assets/foods/almond_oil.png
+    - assets/foods/avocado_oil.png
+    - assets/foods/canola_oil.png
+    - assets/foods/sweet_potato.png
+    - assets/foods/carrot.png
+    - assets/foods/beetroot.png
+    - assets/foods/zucchini.png
+    - assets/foods/spinach.png
+    - assets/foods/broccoli.png
+    - assets/foods/pumpkin.png
+    - assets/foods/green_beans.png
+    - assets/foods/cabbage.png
+    - assets/foods/asparagus.png
+    - assets/foods/cinnamon.png
+    - assets/foods/cardamom.png
+    - assets/foods/ginger.png
+    - assets/foods/cumin.png
+    - assets/foods/turmeric.png
+    - assets/foods/black_pepper.png
+    - assets/foods/fennel.png
+    - assets/foods/clove.png
+    - assets/foods/mustard_seed.png
+    - assets/foods/hing.png
+    - assets/vata_lifestyle.png
+    - assets/pitta_lifestyle.png
+    - assets/kapha_lifestyle.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

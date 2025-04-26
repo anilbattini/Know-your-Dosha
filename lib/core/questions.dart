@@ -1,57 +1,127 @@
+import 'dart:math';
 // Dosha quiz questions and options
 class DoshaQuestion {
   final String question;
   final List<DoshaOption> options;
+  final String? followUpKey; // key to trigger follow-up
+  final List<DoshaQuestion>? followUps;
 
-  DoshaQuestion({required this.question, required this.options});
+  DoshaQuestion({
+    required this.question,
+    required this.options,
+    this.followUpKey,
+    this.followUps,
+  });
+
+  List<DoshaOption> getShuffledOptions([Random? random]) {
+    final opts = List<DoshaOption>.from(options);
+    opts.shuffle(random);
+    return opts;
+  }
 }
 
 class DoshaOption {
   final String text;
   final String dosha; // 'vata', 'pitta', 'kapha'
+  final String? followUpKey; // key to trigger follow-up
 
-  DoshaOption({required this.text, required this.dosha});
+  DoshaOption({required this.text, required this.dosha, this.followUpKey});
 }
 
 final List<DoshaQuestion> doshaQuestions = [
   DoshaQuestion(
     question: 'What best describes your body frame?',
     options: [
-      DoshaOption(text: 'Thin, lanky, and tall', dosha: 'vata'),
-      DoshaOption(text: 'Medium, athletic build', dosha: 'pitta'),
-      DoshaOption(text: 'Large, broad, and sturdy', dosha: 'kapha'),
+      DoshaOption(text: 'Thin, lanky, and tall', dosha: 'vata', followUpKey: 'body_frame'),
+      DoshaOption(text: 'Medium, athletic build', dosha: 'pitta', followUpKey: 'body_frame'),
+      DoshaOption(text: 'Large, broad, and sturdy', dosha: 'kapha', followUpKey: 'body_frame'),
+    ],
+    followUpKey: 'body_frame',
+    followUps: [
+      DoshaQuestion(
+        question: 'Do you find it easy or hard to gain weight?',
+        options: [
+          DoshaOption(text: 'Very hard', dosha: 'vata'),
+          DoshaOption(text: 'Moderate', dosha: 'pitta'),
+          DoshaOption(text: 'Very easy', dosha: 'kapha'),
+        ],
+      ),
     ],
   ),
   DoshaQuestion(
     question: 'How is your skin texture?',
     options: [
-      DoshaOption(text: 'Dry, rough, or thin', dosha: 'vata'),
-      DoshaOption(text: 'Warm, oily, or prone to rashes', dosha: 'pitta'),
-      DoshaOption(text: 'Smooth, moist, or thick', dosha: 'kapha'),
+      DoshaOption(text: 'Dry, rough, or thin', dosha: 'vata', followUpKey: 'skin'),
+      DoshaOption(text: 'Warm, oily, or prone to rashes', dosha: 'pitta', followUpKey: 'skin'),
+      DoshaOption(text: 'Smooth, moist, or thick', dosha: 'kapha', followUpKey: 'skin'),
+    ],
+    followUpKey: 'skin',
+    followUps: [
+      DoshaQuestion(
+        question: 'Do you get rashes or acne easily?',
+        options: [
+          DoshaOption(text: 'Yes, often', dosha: 'pitta'),
+          DoshaOption(text: 'Rarely', dosha: 'kapha'),
+          DoshaOption(text: 'No, but skin is dry', dosha: 'vata'),
+        ],
+      ),
     ],
   ),
   DoshaQuestion(
     question: 'How is your appetite?',
     options: [
-      DoshaOption(text: 'Irregular, sometimes forget to eat', dosha: 'vata'),
-      DoshaOption(text: 'Strong, get irritable if miss a meal', dosha: 'pitta'),
-      DoshaOption(text: 'Steady, can skip meals easily', dosha: 'kapha'),
+      DoshaOption(text: 'Irregular, sometimes forget to eat', dosha: 'vata', followUpKey: 'appetite'),
+      DoshaOption(text: 'Strong, get irritable if miss a meal', dosha: 'pitta', followUpKey: 'appetite'),
+      DoshaOption(text: 'Steady, can skip meals easily', dosha: 'kapha', followUpKey: 'appetite'),
+    ],
+    followUpKey: 'appetite',
+    followUps: [
+      DoshaQuestion(
+        question: 'Do you feel weak or angry if you miss a meal?',
+        options: [
+          DoshaOption(text: 'Angry', dosha: 'pitta'),
+          DoshaOption(text: 'Weak', dosha: 'vata'),
+          DoshaOption(text: 'No effect', dosha: 'kapha'),
+        ],
+      ),
     ],
   ),
   DoshaQuestion(
     question: 'How do you react to stress?',
     options: [
-      DoshaOption(text: 'Anxious, worried, restless', dosha: 'vata'),
-      DoshaOption(text: 'Irritable, angry, impatient', dosha: 'pitta'),
-      DoshaOption(text: 'Withdrawn, lethargic, depressed', dosha: 'kapha'),
+      DoshaOption(text: 'Anxious, worried, restless', dosha: 'vata', followUpKey: 'stress'),
+      DoshaOption(text: 'Irritable, angry, impatient', dosha: 'pitta', followUpKey: 'stress'),
+      DoshaOption(text: 'Withdrawn, lethargic, depressed', dosha: 'kapha', followUpKey: 'stress'),
+    ],
+    followUpKey: 'stress',
+    followUps: [
+      DoshaQuestion(
+        question: 'Do you tend to overthink or get headaches under stress?',
+        options: [
+          DoshaOption(text: 'Overthink', dosha: 'vata'),
+          DoshaOption(text: 'Headaches', dosha: 'pitta'),
+          DoshaOption(text: 'Sleep more', dosha: 'kapha'),
+        ],
+      ),
     ],
   ),
   DoshaQuestion(
     question: 'How is your sleep?',
     options: [
-      DoshaOption(text: 'Light, interrupted, trouble falling asleep', dosha: 'vata'),
-      DoshaOption(text: 'Moderate, can wake up easily', dosha: 'pitta'),
-      DoshaOption(text: 'Deep, heavy, hard to wake up', dosha: 'kapha'),
+      DoshaOption(text: 'Light, interrupted, trouble falling asleep', dosha: 'vata', followUpKey: 'sleep'),
+      DoshaOption(text: 'Moderate, can wake up easily', dosha: 'pitta', followUpKey: 'sleep'),
+      DoshaOption(text: 'Deep, heavy, hard to wake up', dosha: 'kapha', followUpKey: 'sleep'),
+    ],
+    followUpKey: 'sleep',
+    followUps: [
+      DoshaQuestion(
+        question: 'Do you dream a lot or wake up tired?',
+        options: [
+          DoshaOption(text: 'Dream a lot', dosha: 'vata'),
+          DoshaOption(text: 'Wake up tired', dosha: 'kapha'),
+          DoshaOption(text: 'Wake up alert', dosha: 'pitta'),
+        ],
+      ),
     ],
   ),
   DoshaQuestion(
