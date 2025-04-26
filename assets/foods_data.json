@@ -1,0 +1,812 @@
+[
+  {
+    "name": "Oats",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/oats.png"
+  },
+  {
+    "name": "Basmati Rice",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/basmati_rice.png"
+  },
+  {
+    "name": "Quinoa",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/quinoa.png"
+  },
+  {
+    "name": "Wheat",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 3,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/wheat.png"
+  },
+  {
+    "name": "Barley",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 4,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/barley.png"
+  },
+  {
+    "name": "Millet",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 3,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/millet.png"
+  },
+  {
+    "name": "Brown Rice",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 1,
+      "pitta": 4,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/brown_rice.png"
+  },
+  {
+    "name": "Corn",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 2,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/corn.png"
+  },
+  {
+    "name": "Rye",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 3,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/rye.png"
+  },
+  {
+    "name": "Rice Noodles",
+    "type": "grain",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/rice_noodles.png"
+  },
+  {
+    "name": "Banana",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/banana.png"
+  },
+  {
+    "name": "Mango",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/mango.png"
+  },
+  {
+    "name": "Apple (baked)",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/apple.png"
+  },
+  {
+    "name": "Grapes",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/grapes.png"
+  },
+  {
+    "name": "Avocado",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 1
+    },
+    "imageAsset": "assets/foods/avocado.png"
+  },
+  {
+    "name": "Coconut",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/coconut.png"
+  },
+  {
+    "name": "Pomegranate",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/pomegranate.png"
+  },
+  {
+    "name": "Pear (baked)",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/pear.png"
+  },
+  {
+    "name": "Papaya",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/papaya.png"
+  },
+  {
+    "name": "Melon",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/melon.png"
+  },
+  {
+    "name": "Amla",
+    "type": "fruit",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/amla.png"
+  },
+  {
+    "name": "Ghee",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/ghee.png"
+  },
+  {
+    "name": "Olive Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/olive_oil.png"
+  },
+  {
+    "name": "Coconut Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/coconut_oil.png"
+  },
+  {
+    "name": "Sesame Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/sesame_oil.png"
+  },
+  {
+    "name": "Sunflower Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/sunflower_oil.png"
+  },
+  {
+    "name": "Flaxseed Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/flaxseed_oil.png"
+  },
+  {
+    "name": "Mustard Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 3,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/mustard_oil.png"
+  },
+  {
+    "name": "Almond Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/almond_oil.png"
+  },
+  {
+    "name": "Avocado Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 1
+    },
+    "imageAsset": "assets/foods/avocado_oil.png"
+  },
+  {
+    "name": "Canola Oil",
+    "type": "oil",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/canola_oil.png"
+  },
+  {
+    "name": "Sweet Potato",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/sweet_potato.png"
+  },
+  {
+    "name": "Carrot",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/carrot.png"
+  },
+  {
+    "name": "Beetroot",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/beetroot.png"
+  },
+  {
+    "name": "Zucchini",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/zucchini.png"
+  },
+  {
+    "name": "Spinach (cooked)",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/spinach.png"
+  },
+  {
+    "name": "Broccoli (cooked)",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 4,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/broccoli.png"
+  },
+  {
+    "name": "Pumpkin",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/pumpkin.png"
+  },
+  {
+    "name": "Green Beans",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/green_beans.png"
+  },
+  {
+    "name": "Cabbage (cooked)",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 4,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/cabbage.png"
+  },
+  {
+    "name": "Asparagus",
+    "type": "vegetable",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/asparagus.png"
+  },
+  {
+    "name": "Cinnamon",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/cinnamon.png"
+  },
+  {
+    "name": "Cardamom",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/cardamom.png"
+  },
+  {
+    "name": "Ginger",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/ginger.png"
+  },
+  {
+    "name": "Cumin",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/cumin.png"
+  },
+  {
+    "name": "Turmeric",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/turmeric.png"
+  },
+  {
+    "name": "Black Pepper",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 2,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/black_pepper.png"
+  },
+  {
+    "name": "Fennel",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/fennel.png"
+  },
+  {
+    "name": "Clove",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 3,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/clove.png"
+  },
+  {
+    "name": "Mustard Seed",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 2,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/mustard_seed.png"
+  },
+  {
+    "name": "Hing (Asafoetida)",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/hing.png"
+  },
+  {
+    "name": "Tulsi",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/tulsi.png"
+  },
+  {
+    "name": "Triphala",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/triphala.png"
+  },
+  {
+    "name": "Ashwagandha",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/ashwagandha.png"
+  },
+  {
+    "name": "Brahmi",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/brahmi.png"
+  },
+  {
+    "name": "Shatavari",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/shatavari.png"
+  },
+  {
+    "name": "Yashtimadhu",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/yashtimadhu.png"
+  },
+  {
+    "name": "Haritaki",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 3,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/haritaki.png"
+  },
+  {
+    "name": "Bibhitaki",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 4,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/bibhitaki.png"
+  },
+  {
+    "name": "Amla Powder",
+    "type": "spice",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/amla_powder.png"
+  },
+  {
+    "name": "Moong Dal",
+    "type": "legume",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/moong_dal.png"
+  },
+  {
+    "name": "Toor Dal",
+    "type": "legume",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 4,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/toor_dal.png"
+  },
+  {
+    "name": "Masoor Dal",
+    "type": "legume",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 3,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/masoor_dal.png"
+  },
+  {
+    "name": "Chickpeas",
+    "type": "legume",
+    "doshaRatings": {
+      "vata": 2,
+      "pitta": 4,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/chickpeas.png"
+  },
+  {
+    "name": "Kidney Beans",
+    "type": "legume",
+    "doshaRatings": {
+      "vata": 1,
+      "pitta": 3,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/kidney_beans.png"
+  },
+  {
+    "name": "Yogurt (fresh)",
+    "type": "dairy",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 3,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/yogurt.png"
+  },
+  {
+    "name": "Paneer",
+    "type": "dairy",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 3,
+      "kapha": 1
+    },
+    "imageAsset": "assets/foods/paneer.png"
+  },
+  {
+    "name": "Buttermilk",
+    "type": "dairy",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/buttermilk.png"
+  },
+  {
+    "name": "Almond Milk",
+    "type": "dairy",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/almond_milk.png"
+  },
+  {
+    "name": "Almonds (soaked)",
+    "type": "nut",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/almonds.png"
+  },
+  {
+    "name": "Walnuts",
+    "type": "nut",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/walnuts.png"
+  },
+  {
+    "name": "Pumpkin Seeds",
+    "type": "seed",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/pumpkin_seeds.png"
+  },
+  {
+    "name": "Sunflower Seeds",
+    "type": "seed",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 5,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/sunflower_seeds.png"
+  },
+  {
+    "name": "Chia Seeds",
+    "type": "seed",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 4,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/chia_seeds.png"
+  },
+  {
+    "name": "Jaggery",
+    "type": "sweetener",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 3,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/jaggery.png"
+  },
+  {
+    "name": "Honey (raw)",
+    "type": "sweetener",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 2,
+      "kapha": 5
+    },
+    "imageAsset": "assets/foods/honey.png"
+  },
+  {
+    "name": "Maple Syrup",
+    "type": "sweetener",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/maple_syrup.png"
+  },
+  {
+    "name": "Kitchari",
+    "type": "dish",
+    "doshaRatings": {
+      "vata": 5,
+      "pitta": 5,
+      "kapha": 4
+    },
+    "imageAsset": "assets/foods/kitchari.png"
+  },
+  {
+    "name": "Roti/Chapathi",
+    "type": "dish",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 2
+    },
+    "imageAsset": "assets/foods/roti.png"
+  },
+  {
+    "name": "Dosa",
+    "type": "dish",
+    "doshaRatings": {
+      "vata": 3,
+      "pitta": 3,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/dosa.png"
+  },
+  {
+    "name": "Idli",
+    "type": "dish",
+    "doshaRatings": {
+      "vata": 4,
+      "pitta": 4,
+      "kapha": 3
+    },
+    "imageAsset": "assets/foods/idli.png"
+  }
+] 
