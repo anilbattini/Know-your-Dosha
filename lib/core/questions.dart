@@ -1,5 +1,5 @@
 import 'dart:math';
-// Dosha quiz questions and options
+// Know Your Dosha questions and options
 class DoshaQuestion {
   final String question;
   final List<DoshaOption> options;

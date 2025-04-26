@@ -19,7 +19,7 @@ class DoshaQuizApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // For now, use a default age (e.g., 30)
     return MaterialApp(
-      title: 'Dosha Quiz',
+      title: 'Know Your Dosha',
       theme: AppStyle.themeForAge(30),
       home: const WelcomeScreen(),
     );

@@ -1,10 +1,10 @@
-# Dosha Quiz App
+# Know Your Dosha App
 
 A comprehensive Flutter application that helps users discover their dominant Ayurvedic dosha (Vata, Pitta, or Kapha) through an interactive quiz and provides personalized food and lifestyle recommendations.
 
 ## Features
 
-### 🧘‍♀️ Interactive Dosha Quiz
+### 🧘‍♀️ Interactive Know Your Dosha
 - **Dynamic Question System**: Starts with 10 questions and adaptively asks more (up to 30) if results are ambiguous
 - **Follow-up Questions**: Intelligent follow-up questions based on user responses for more accurate results
 - **Progress Tracking**: Visual progress indicator showing quiz completion
